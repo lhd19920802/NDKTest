@@ -12,8 +12,35 @@ extern "C" {
  * Method:    helloJNI
  * Signature: ()Ljava/lang/String;
  */
-jstring Java_com_lhd_ndktest_JNIS_helloJNI
+JNIEXPORT jstring JNICALL Java_com_lhd_ndktest_JNIS_helloJNI
   (JNIEnv *, jobject);
+
+/*
+ * Class:     com_lhd_ndktest_JNIS
+ * Method:    sum
+ * Signature: (II)I
+ */
+JNIEXPORT jint JNICALL Java_com_lhd_ndktest_JNIS_sum
+  (JNIEnv *, jobject, jint, jint);
+
+/*
+ * Class:     com_lhd_ndktest_JNIS
+ * Method:    sayHello
+ * Signature: (Ljava/lang/String;)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_com_lhd_ndktest_JNIS_sayHello
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     com_lhd_ndktest_JNIS
+ * Method:    increaseArrayEles
+ * Signature: ([I)[I
+ */
+JNIEXPORT jintArray JNICALL Java_com_lhd_ndktest_JNIS_increaseArrayEles
+  (JNIEnv *, jobject, jintArray);
+
+JNIEXPORT jintArray JNICALL Java_com_lhd_ndktest_JNIS_checkPwd
+        (JNIEnv *, jobject, jstring);
 
 #ifdef __cplusplus
 }
